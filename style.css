@@ -1501,10 +1501,19 @@ h1, h2, h3, h4 {
         padding-bottom: 48px;
     }
 
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .hero-badge {
         font-size: 0.78rem;
         padding: 6px 14px;
         margin-bottom: 18px;
+        margin-left: auto;
+        margin-right: auto;
         background-color: rgba(45, 106, 79, 0.08);
         border: 1px solid rgba(45, 106, 79, 0.15);
     }
@@ -1514,6 +1523,7 @@ h1, h2, h3, h4 {
         line-height: 1.25;
         letter-spacing: -0.03em;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .hero-cta-box {
@@ -1522,10 +1532,13 @@ h1, h2, h3, h4 {
         border-radius: var(--radius-lg);
         margin-bottom: 32px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+        text-align: center;
+        align-items: center;
     }
 
     .hero-cta-desc {
         font-size: 0.9rem;
+        text-align: center;
     }
 
     .hero-cta-box .btn {
@@ -1547,16 +1560,20 @@ h1, h2, h3, h4 {
         border-radius: var(--radius-md);
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-sm);
+        text-align: center;
+        align-items: center;
     }
 
     .stat-num, .stat-badge-text {
         font-size: 1.7rem;
+        text-align: center;
     }
 
     .stat-label {
         font-size: 0.75rem;
         margin-top: 2px;
         max-width: 100%;
+        text-align: center;
     }
 
     .stat-divider {
@@ -1565,10 +1582,12 @@ h1, h2, h3, h4 {
 
     .hero-visual {
         margin-top: 12px;
+        width: 100%;
     }
 
     .image-frame-container {
         max-width: 100%;
+        margin: 0 auto;
     }
 
     .image-accent-bg {
@@ -1620,34 +1639,41 @@ h1, h2, h3, h4 {
 
     .summary-item {
         background-color: rgba(255, 255, 255, 0.05);
-        padding: 16px;
+        padding: 18px 16px;
         border-radius: var(--radius-md);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        gap: 14px;
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .summary-icon {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         font-size: 1rem;
     }
 
     .summary-item h4 {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        text-align: center;
     }
 
     .summary-item p {
         font-size: 0.85rem;
+        text-align: center;
     }
 
     /* Section 1: About Me Mobile UX */
     .subsection-title {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .subsection-sub {
         font-size: 0.95rem;
         margin-bottom: 28px;
+        text-align: center;
     }
 
     .requests-grid, .steps-grid {
@@ -1660,6 +1686,7 @@ h1, h2, h3, h4 {
         border-radius: var(--radius-md);
         border-left: 3px solid var(--border-color);
         transition: var(--transition);
+        text-align: center;
     }
 
     .request-card:active {
@@ -1670,16 +1697,19 @@ h1, h2, h3, h4 {
     .request-num {
         font-size: 1.25rem;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .request-card h4 {
         font-size: 1.1rem;
         margin-bottom: 8px;
+        text-align: center;
     }
 
     .request-card p {
         font-size: 0.92rem;
         line-height: 1.5;
+        text-align: center;
     }
 
     .approach-box {
