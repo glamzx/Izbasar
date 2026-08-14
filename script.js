@@ -27,17 +27,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
+    const menuIcon = document.getElementById('menuIcon');
     
     if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        function toggleMenu(show) {
+            const isActive = typeof show === 'boolean' ? show : !navMenu.classList.contains('active');
+            navMenu.classList.toggle('active', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+            
+            if (menuIcon && window.lucide) {
+                menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+                window.lucide.createIcons();
+            }
+        }
+
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
 
         // Close menu on link click
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+                toggleMenu(false);
             });
+        });
+
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                toggleMenu(false);
+            }
         });
     }
 

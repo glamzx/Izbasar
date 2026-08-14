@@ -1359,7 +1359,7 @@ h1, h2, h3, h4 {
     transform: translateX(0);
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries & Mobile Optimization */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -1391,63 +1391,292 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .header-actions .header-btn {
         display: none;
     }
 
     .mobile-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background-color: rgba(45, 106, 79, 0.08);
+        color: var(--primary-green);
+        border: none;
+        cursor: pointer;
     }
 
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 72px;
         left: 0;
         width: 100%;
-        background-color: var(--bg-main);
-        padding: 24px;
+        background-color: rgba(249, 248, 243, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 24px 20px 32px;
         border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         display: none;
+        z-index: 999;
+        transform: translateY(-10px);
+        transition: var(--transition);
     }
 
     .nav-menu.active {
         display: block;
+        transform: translateY(0);
     }
 
     .nav-list {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        align-items: stretch;
+        gap: 8px;
     }
 
-    .summary-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    .nav-link {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 12px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        background-color: transparent;
     }
 
-    .requests-grid, .steps-grid {
-        grid-template-columns: 1fr;
+    .nav-link:hover, .nav-link:active {
+        background-color: var(--tint-green);
+        color: var(--primary-green);
     }
 
-    .booking-details-grid {
-        grid-template-columns: 1fr;
+    .hero-section {
+        padding-top: 110px;
+        padding-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-cta-box {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .hero-cta-box .btn {
+        width: 100%;
     }
 
     .hero-stats {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+        width: 100%;
+    }
+
+    .stat-card {
+        background-color: var(--bg-card);
+        padding: 16px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-color);
+    }
+
+    .stat-num, .stat-badge-text {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+        max-width: 100%;
     }
 
     .stat-divider {
         display: none;
     }
 
-    .hero-title {
-        font-size: 2rem;
+    .hero-img {
+        height: 380px;
+    }
+
+    .doodle-stroke.top-left {
+        width: 60px;
+        height: 60px;
+        top: -20px;
+        left: -20px;
+    }
+
+    .doodle-stroke.top-right {
+        display: none;
+    }
+
+    .summary-bar {
+        padding: 30px 0;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+    }
+
+    .requests-grid, .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .request-card, .step-card {
+        padding: 24px 20px;
+    }
+
+    .approach-box, .booking-box, .video-card-main, .book-card-main {
+        padding: 28px 20px;
+        border-radius: var(--radius-lg);
+    }
+
+    .approach-content h3, .booking-info h3, .video-title, .book-title {
+        font-size: 1.6rem;
+    }
+
+    .approach-visual .about-img {
+        height: 300px;
+    }
+
+    .about-badge {
+        bottom: -10px;
+        right: 10px;
+        padding: 14px 18px;
+        max-width: 150px;
+    }
+
+    .badge-value {
+        font-size: 1.5rem;
+    }
+
+    .video-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .video-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .video-actions .btn {
+        width: 100%;
+    }
+
+    .video-thumb {
+        height: 240px;
+    }
+
+    .outcomes-card {
+        padding: 28px 20px;
+        border-radius: var(--radius-lg);
+    }
+
+    .outcomes-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .booking-details-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .booking-cta .btn {
+        width: 100%;
+    }
+
+    .book-cover-img {
+        height: 320px;
+    }
+
+    .book-action-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .book-action-box .btn {
+        width: 100%;
+    }
+
+    .book-status {
+        justify-content: center;
+    }
+
+    .floating-wa-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .floating-wa-btn i {
+        width: 28px;
+        height: 28px;
+    }
+
+    .wa-tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-badge {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-img {
+        height: 320px;
+    }
+
+    .video-thumb {
+        height: 200px;
+    }
+
+    .play-pulse-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-pulse-btn i {
+        width: 26px;
+        height: 26px;
+    }
+
+    .play-text {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
