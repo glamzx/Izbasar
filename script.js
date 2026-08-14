@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             iframeContainer.innerHTML = `
                 <iframe 
                     src="https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&enablejsapi=1" 
-                    title="Как изменить свою жизнь через изменение состояния? — Избасар Мәмыров"
+                    title="Как изменить свою жизнь через изменение состояния? — Избасар Мамыров"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                 </iframe>
